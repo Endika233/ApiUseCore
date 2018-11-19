@@ -1,7 +1,18 @@
-﻿@{
+﻿@model IEnumerable<Character>; 
+@*Esto le indica que vamos a recibir una lista, TODO: buscar info sobre IEnumerable. Parece ser que con cada model solo se puede coger una lista*@
+@*"Viene este modelo y es de este tipo*@
+@{
     ViewData["Title"] = "About";
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
+
+@{ 
+    foreach(Character character in Model)//Aunque sea en mayusculas se refiere al model que has creado arriba en linea 1
+    {
+        <p>@character.Name</p>//getter de character para sacar el name
+    }
+}
+
 
 <p>Use this area to provide additional information.</p>
